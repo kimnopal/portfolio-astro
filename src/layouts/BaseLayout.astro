@@ -1,0 +1,36 @@
+---
+import Navbar from "../components/Navbar.jsx";
+import Aside from "../components/Aside.jsx";
+
+const { pageTitle } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Naufal Hakim - {pageTitle}</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body
+    class="bg-gradient-to-tr from-slate-950 from-50% to-slate-900 text-slate-100"
+  >
+    <Navbar client:load />
+    <div
+      class="w-screen min-h-screen mx-auto px-4 pt-20 flex flex-row-reverse md:max-w-3xl lg:max-w-4xl"
+    >
+      <Aside />
+      <main class="w-full">
+        <slot />
+      </main>
+    </div>
+  </body>
+</html>

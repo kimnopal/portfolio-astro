@@ -1,0 +1,14 @@
+---
+const { data } = Astro.props;
+---
+
+<section id="project" class="mb-12 md:mb-16">
+  <h2 class="text-xl font-semibold mb-4 md:text-2xl">My Newest Project</h2>
+  {
+    data ? (
+      data.map((project) => <div>{project.title}</div>)
+    ) : (
+      <p class="text-sm text-slate-500">Data Kosong</p>
+    )
+  }
+</section>
