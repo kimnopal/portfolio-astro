@@ -1,16 +1,44 @@
 ---
-const { data } = Astro.props;
+import { FaReact, FaLaravel, FaGolang, FaNodeJs } from "react-icons/fa6";
+import { SiTailwindcss, SiMysql, SiAstro } from "react-icons/si";
 ---
 
 <section id="tech" class="mb-12 md:mb-16">
-  <h2 class="text-xl font-semibold mb-4 md:text-2xl">
-    Current Used Tech Stack
-  </h2>
-  {
-    data ? (
-      data.map((project) => <div>{project.title}</div>)
-    ) : (
-      <p class="text-sm text-slate-500">Data Kosong</p>
-    )
-  }
+  <div>
+    <h2 class="text-xl font-semibold mb-4 md:text-2xl md:mb-6">
+      Current Used Tech Stack
+    </h2>
+    <div
+      class="grid grid-cols-[repeat(auto-fit,minmax(0,_60px))] gap-5 md:grid-cols-10"
+    >
+      <FaGolang
+        size={"100%"}
+        className="transition hover:text-slate-400 hover:scale-110"
+      />
+      <FaNodeJs
+        size="100%"
+        className="transition hover:text-slate-400 hover:scale-110"
+      />
+      <FaReact
+        size="100%"
+        className="transition hover:text-slate-400 hover:scale-110"
+      />
+      <FaLaravel
+        size={"100%"}
+        className="transition hover:text-slate-400 hover:scale-110"
+      />
+      <SiTailwindcss
+        size={"100%"}
+        className="transition hover:text-slate-400 hover:scale-110"
+      />
+      <SiMysql
+        size={"100%"}
+        className="transition hover:text-slate-400 hover:scale-110"
+      />
+      <SiAstro
+        size={"100%"}
+        className="transition hover:text-slate-400 hover:scale-110"
+      />
+    </div>
+  </div>
 </section>

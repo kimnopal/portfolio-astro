@@ -18,10 +18,9 @@ const Aside = forwardRef(({ isOpen, onClick }, ref) => {
 
     return (
         <>
-
             <aside
                 id="drawer-create-product-default"
-                className={`fixed top-0 right-0 z-40 w-full h-screen max-w-xs p-4 overflow-y-auto transition-transform  bg-gradient-to-tl from-slate-950 from-50% to-slate-900 lg:translate-x-0 lg:flex lg:flex-col lg:justify-center lg:p-6 lg:sticky lg:w-fit lg:bg-none
+                className={`fixed top-0 right-0 z-40 w-full h-screen max-w-xs p-4 overflow-y-auto transition-transform  bg-gradient-to-tl from-slate-950 from-50% to-slate-900 lg:sticky lg:translate-x-0 lg:flex lg:flex-col lg:justify-center lg:p-6 lg:w-fit lg:h-auto lg:bg-none
             ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}
                 tabIndex="-1"
                 aria-labelledby="drawer-label"

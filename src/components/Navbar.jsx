@@ -25,7 +25,7 @@ const Navbar = () => {
 
     return (
         <header className="fixed top-0 left-0 right-0 lg:hidden">
-            <nav className=" flex justify-end md:max-w-3xl w-screen mx-auto px-4 py-5 lg:hidden">
+            <nav className=" flex justify-end md:max-w-3xl w-auto mx-auto px-4 py-5 lg:hidden">
                 <div className="bg-slate-800 rounded-lg" onClick={handleClick} ref={toggleButton}>
                     <button
                         id="createProductButton"

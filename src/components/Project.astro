@@ -1,14 +1,49 @@
 ---
-const { data } = Astro.props;
+const projectImages = await Astro.glob("../images/project/*.png");
 ---
 
 <section id="project" class="mb-12 md:mb-16">
-  <h2 class="text-xl font-semibold mb-4 md:text-2xl">My Newest Project</h2>
-  {
-    data ? (
-      data.map((project) => <div>{project.title}</div>)
-    ) : (
-      <p class="text-sm text-slate-500">Data Kosong</p>
-    )
-  }
+  <h2 class="text-xl font-semibold mb-4 md:text-2xl md:mb-6">
+    My Newest Project
+  </h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2">
+    {
+      projectImages ? (
+        projectImages.map((image) => (
+          <div>
+            <div class="aspect-video rounded-lg overflow-hidden mb-2">
+              <img src={image.default} />
+            </div>
+            <h3 class="text-lg font-semibold mb-1">Dbyte</h3>
+            <p class="text-base font-normal mb-1">
+              Forum website as a place for student discussion
+            </p>
+            <a
+              href=""
+              class="text-base font-normal text-slate-400 flex items-center gap-2"
+            >
+              See more{" "}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                class="bi bi-box-arrow-up-right w-4"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"
+                />
+                <path
+                  fill-rule="evenodd"
+                  d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"
+                />
+              </svg>
+            </a>
+          </div>
+        ))
+      ) : (
+        <p class="text-sm text-slate-500">Data Kosong</p>
+      )
+    }
+  </div>
 </section>
