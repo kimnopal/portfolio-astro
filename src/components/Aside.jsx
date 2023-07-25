@@ -19,23 +19,16 @@ const Aside = forwardRef(({ isOpen, onClick }, ref) => {
     return (
         <>
             <aside
-                id="drawer-create-product-default"
                 className={`fixed top-0 right-0 z-40 w-full h-screen max-w-xs p-4 overflow-y-auto transition-transform  bg-gradient-to-tl from-slate-950 from-50% to-slate-900 lg:sticky lg:translate-x-0 lg:flex lg:flex-col lg:justify-center lg:p-6 lg:w-fit lg:h-auto lg:bg-none
             ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}
-                tabIndex="-1"
-                aria-labelledby="drawer-label"
-                aria-hidden="true"
                 ref={ref}
             >
                 <button
                     type="button"
-                    data-drawer-dismiss="drawer-create-product-default"
-                    aria-controls="drawer-create-product-default"
                     className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 mb-6 inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white lg:hidden"
                     onClick={onClick}
                 >
                     <svg
-                        aria-hidden="true"
                         className="w-5 h-5"
                         fill="currentColor"
                         viewBox="0 0 20 20"

@@ -1,43 +1,44 @@
 ---
-import { FaReact, FaLaravel, FaGolang, FaNodeJs } from "react-icons/fa6";
-import { SiTailwindcss, SiMysql, SiAstro } from "react-icons/si";
+import Icon from "astro-icon";
 ---
 
-<section id="tech" class="mb-12 md:mb-16">
+<section id="tech" class="mb-14 md:mb-16">
   <div>
-    <h2 class="text-xl font-semibold mb-4 md:text-2xl md:mb-6">
+    <h2
+      class="w-fit text-xl font-semibold mb-6 relative after:block after:absolute after:-z-10 after:bottom-1 after:-left-3 after:h-full after:w-3/4 after:bg-gradient-to-r after:from-slate-800 after:-skew-y-[5deg] after:-skew-x-6 md:text-2xl md:mb-7"
+    >
       Current Used Tech Stack
     </h2>
     <div
-      class="grid grid-cols-[repeat(auto-fit,minmax(0,_60px))] gap-5 md:grid-cols-10"
+      class="grid grid-cols-[repeat(auto-fit,minmax(0,_60px))] gap-6 md:grid-cols-9 items-center"
     >
-      <FaGolang
-        size={"100%"}
-        className="transition hover:text-slate-400 hover:scale-110"
+      <Icon
+        name="logos:go"
+        class="transition grayscale hover:grayscale-0 hover:scale-125"
       />
-      <FaNodeJs
-        size="100%"
-        className="transition hover:text-slate-400 hover:scale-110"
+      <Icon
+        name="logos:laravel"
+        class="transition grayscale hover:grayscale-0 hover:scale-125"
       />
-      <FaReact
-        size="100%"
-        className="transition hover:text-slate-400 hover:scale-110"
+      <Icon
+        name="logos:nodejs-icon"
+        class="transition grayscale hover:grayscale-0 hover:scale-125"
       />
-      <FaLaravel
-        size={"100%"}
-        className="transition hover:text-slate-400 hover:scale-110"
+      <Icon
+        name="logos:mysql"
+        class="transition grayscale hover:grayscale-0 hover:scale-125"
       />
-      <SiTailwindcss
-        size={"100%"}
-        className="transition hover:text-slate-400 hover:scale-110"
+      <Icon
+        name="logos:react"
+        class="transition grayscale hover:grayscale-0 hover:scale-125"
       />
-      <SiMysql
-        size={"100%"}
-        className="transition hover:text-slate-400 hover:scale-110"
+      <Icon
+        name="logos:astro"
+        class="transition grayscale hover:grayscale-0 hover:scale-125"
       />
-      <SiAstro
-        size={"100%"}
-        className="transition hover:text-slate-400 hover:scale-110"
+      <Icon
+        name="logos:tailwindcss-icon"
+        class="transition grayscale hover:grayscale-0 hover:scale-125"
       />
     </div>
   </div>
