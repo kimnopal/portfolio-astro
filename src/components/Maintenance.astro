@@ -1,0 +1,11 @@
+---
+import maintenanceImage from "../images/maintenance.svg";
+import maintenanceImageV2 from "../images/maintenancev2.svg";
+
+const { message } = Astro.props;
+---
+
+<section class="w-full h-full flex flex-col justify-center items-center">
+  <h1 class="text-2xl font-semibold text-center mb-4">{message}</h1>
+  <img src={maintenanceImageV2} alt="Maintenance Image" class="w-72" />
+</section>

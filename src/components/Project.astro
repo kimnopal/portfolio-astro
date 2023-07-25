@@ -4,7 +4,7 @@ const projectImages = await Astro.glob("../images/project/*.png");
 
 <section id="project" class="mb-12 md:mb-16">
   <h2
-    class="w-fit text-xl font-semibold mb-6 relative after:block after:absolute after:-z-10 after:bottom-1 after:-left-3 after:h-full after:w-3/4 after:bg-gradient-to-r after:from-slate-800 after:-skew-y-[5deg] after:-skew-x-6 md:text-2xl md:mb-7"
+    class="w-fit text-xl font-semibold mb-6 relative after:block after:absolute after:-z-10 after:bottom-1 after:-left-3 after:h-full after:w-3/4 after:bg-gradient-to-r after:from-slate-800 after:-skew-y-3 after:-skew-x-6 md:text-2xl md:mb-7"
   >
     My Newest Project
   </h2>
@@ -13,7 +13,7 @@ const projectImages = await Astro.glob("../images/project/*.png");
       projectImages ? (
         projectImages.map((image) => (
           <>
-            <a href="/test" class="transition hover:scale-[103%]">
+            <a href="/project" class="transition hover:scale-[103%]">
               <div class="aspect-video rounded-lg overflow-hidden mb-2">
                 <img src={"/src/images/project/dbyte.png"} />
               </div>
@@ -42,7 +42,7 @@ const projectImages = await Astro.glob("../images/project/*.png");
                 </div>
               </div>
             </a>
-            <a href="/test" class="transition hover:scale-[102%]">
+            <a href="/project" class="transition hover:scale-[102%]">
               <div class="aspect-video rounded-lg overflow-hidden mb-2">
                 <img src={"/src/images/project/dbyte.png"} />
               </div>

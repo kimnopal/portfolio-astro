@@ -1,4 +1,4 @@
-import { forwardRef } from "react";
+import { forwardRef, useEffect, useState } from "react";
 
 const Aside = forwardRef(({ isOpen, onClick }, ref) => {
     const navData = [
@@ -16,16 +16,22 @@ const Aside = forwardRef(({ isOpen, onClick }, ref) => {
         },
     ];
 
+    const [path, setPath] = useState('')
+
+    useEffect(() => {
+        setPath(window.location.pathname)
+    }, [])
+
     return (
         <>
             <aside
-                className={`fixed top-0 right-0 z-40 w-full h-screen max-w-xs p-4 overflow-y-auto transition-transform  bg-gradient-to-tl from-slate-950 from-50% to-slate-900 lg:sticky lg:translate-x-0 lg:flex lg:flex-col lg:justify-center lg:p-6 lg:w-fit lg:h-auto lg:bg-none
+                className={`fixed top-0 right-0 z-40 w-full h-screen max-w-xs p-6 overflow-y-auto transition-transform bg-gradient-to-tl from-slate-950 from-50% to-slate-900 lg:sticky lg:top-20 lg:translate-x-0 lg:flex lg:flex-col lg:justify-center lg:w-fit lg:bg-none
             ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}
                 ref={ref}
             >
                 <button
                     type="button"
-                    className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 mb-6 inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white lg:hidden"
+                    className="bg-slate-800 focus:ring-2 focus:ring-primary-300 rounded-lg text-sm p-2 mb-11 lg:hidden"
                     onClick={onClick}
                 >
                     <svg
@@ -40,9 +46,9 @@ const Aside = forwardRef(({ isOpen, onClick }, ref) => {
                     >
                     <span className="sr-only">Close menu</span>
                 </button>
-                <div>
+                <div className="lg:border-l-2 lg:border-slate-700">
                     <div className="space-y-6">
-                        {navData.map(nav => <a href={nav.url} key={nav.pageTitle} className="block text-sm font-medium text-slate-100 lg:text-xl">{nav.pageTitle}</a>)}
+                        {navData.map(nav => <a href={nav.url} key={nav.pageTitle} id="nav-link" className={`${path == nav.url ? 'border-l-4 border-slate-700 pl-6 lg:pl-3' : 'pl-7'} block text-lg font-medium text-slate-100 lg:transition-all lg:text-xl`}>{nav.pageTitle}</a>)}
                     </div>
                 </div>
             </aside>

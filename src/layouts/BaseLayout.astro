@@ -25,9 +25,9 @@ const { pageTitle } = Astro.props;
   >
     <Navbar client:load />
     <div
-      class="w-auto min-h-screen mx-auto pt-20 px-4 flex flex-row-reverse md:max-w-3xl lg:max-w-4xl"
+      class="w-auto min-h-screen mx-auto pt-20 px-4 flex flex-row-reverse gap-8 md:max-w-3xl lg:max-w-4xl"
     >
-      <Aside />
+      <Aside client:load />
       <main class="w-full">
         <slot />
       </main>
